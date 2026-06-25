@@ -7,25 +7,21 @@
 <meta name="robots" content="index, follow">
 <meta name="revisit-after" content="1 day">
 
-<!-- ===== DYNAMIC SEO TAGS (Auto Update) ===== -->
 <title id="pageTitle">Lucknow SafeZone - Complete Safety Platform 2026</title>
 <meta name="description" id="metaDesc" content="Lucknow safety platform: AQI, emergency, women safety, blood donors, coaching safety, live news, SOS alerts. 100% free.">
 <meta name="keywords" id="metaKeywords" content="Lucknow safety, Lucknow AQI, women safety Lucknow, emergency Lucknow, blood donors Lucknow, coaching safety, Lucknow news, SOS alert, safe city Lucknow, महिला सुरक्षा, लखनऊ सुरक्षा, लखनऊ एयर क्वालिटी, 1090 लखनऊ">
 <link rel="canonical" href="https://sites.google.com/view/lucknow-safezone/">
 
-<!-- ===== OPEN GRAPH ===== -->
 <meta property="og:title" content="Lucknow SafeZone - Complete Safety Platform">
 <meta property="og:description" content="Your complete safety guide for Lucknow. AQI, emergency, women safety, live news, SOS alerts. 100% free.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sites.google.com/view/lucknow-safezone/">
 <meta property="og:image" content="https://img.icons8.com/color/96/security-checked--v1.png">
 
-<!-- ===== TWITTER CARD ===== -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lucknow SafeZone - Complete Safety Platform">
 <meta name="twitter:description" content="Your complete safety guide for Lucknow. Free. No data collection.">
 
-<!-- ===== SCHEMA.ORG STRUCTURED DATA ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,7 +46,6 @@
 }
 </script>
 
-<!-- ===== AUTO SITEMAP (JSON) ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,7 +59,6 @@
 }
 </script>
 
-<!-- ===== PRELOAD ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://unpkg.com">
@@ -304,9 +298,11 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 </head>
 <body>
 
-<!-- ===== TOP BAR ===== -->
-<div class="top-bar"><span>🔥 लखनऊ सुरक्षा · 112 · 1090 · 101 · 🛒 सुरक्षा उत्पाद · 🚺 महिला सुरक्षा · 🇮🇳 · SEO Score: 98%</span></div>
-<div class="disclaimer">🛡️ <strong>सामुदायिक जागरूकता मंच</strong> · आपातकाल 112 · <span style="color:var(--gd);font-weight:700;">सुरक्षित लखनऊ</span> <span class="seo-badge">🔍 SEO Optimized</span></div>
+<!-- ===== TOP BAR (UPDATED - More Engaging) ===== -->
+<div class="top-bar"><span>🚨 लखनऊ सुरक्षित · 112 · 1090 · सुरक्षा हर नागरिक का अधिकार</span></div>
+
+<!-- ===== DISCLAIMER (UPDATED - More Engaging) ===== -->
+<div class="disclaimer">🛡️ <strong>सामुदायिक सुरक्षा</strong> · आपात 112 · महिला सुरक्षा 1090 · <span style="color:var(--gd);font-weight:700;">सुरक्षित लखनऊ</span></div>
 
 <!-- ===== ALERT BANNER ===== -->
 <div class="alert-banner">
@@ -793,6 +789,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
         <button class="btn btn-outline" onclick="becomeHelper()">🌟 सहायक बनें</button>
     </div>
 </section>
+
 <!-- ================================================================ -->
 <!-- ===== UPDATED FOOTER (Professional & Clean) ===== -->
 <!-- ================================================================ -->
@@ -812,10 +809,6 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 <!-- ===== SCRIPTS ===== -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 <script>
-// ================================================================
-// ✅ COMPLETE JAVASCRIPT - ALL FEATURES (WITH FIXED MAP)
-// ================================================================
-
 // ===== AUTO SEO UPDATE =====
 function updateSEO() {
     const now = new Date();
@@ -1153,7 +1146,6 @@ document.getElementById('sosBtn').addEventListener('click', function() {
 });
 
 // ===== DONATION WITH UPDATED UPI =====
-// ✅ FINAL UPDATED UPI: icfai.sandeep@oksbi
 const UPI_DEFAULT = 'icfai.sandeep@oksbi';
 function getUPI() { return localStorage.getItem('upi_id') || UPI_DEFAULT; }
 
@@ -1195,8 +1187,6 @@ function showAdminMenu() {
         alert('❌ Wrong password');
     }
 }
-
-// Double-tap logo for admin
 document.getElementById('logoMain').addEventListener('dblclick', showAdminMenu);
 
 // ===== WOMEN FEATURES =====
@@ -1308,17 +1298,12 @@ function forceLoadMap() {
         try { mapInstance.remove(); } catch(e) {}
         mapInstance = null;
     }
-    // Give a small delay before retrying
     setTimeout(initMap, 300);
 }
 
 function initMap() {
-    // 1. Already loaded check
-    if (mapLoaded && mapInstance) {
-        return;
-    }
+    if (mapLoaded && mapInstance) return;
 
-    // 2. Check if Leaflet library is available
     if (typeof L === 'undefined') {
         mapInitAttempts++;
         if (mapInitAttempts < MAX_MAP_ATTEMPTS) {
@@ -1337,17 +1322,14 @@ function initMap() {
         const mapElement = document.getElementById('map');
         if (!mapElement) return;
 
-        // Hide loading text & show map container properly
         const loadingEl = document.getElementById('mapLoading');
         if (loadingEl) loadingEl.style.display = 'none';
 
-        // Clear previous instance if any
         if (mapInstance) {
             try { mapInstance.remove(); } catch(e) {}
             mapInstance = null;
         }
 
-        // Initialize map
         mapInstance = L.map('map', {
             center: [26.8467, 80.9462],
             zoom: 13,
@@ -1356,13 +1338,11 @@ function initMap() {
             attributionControl: true
         });
 
-        // Tile Layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap',
             maxZoom: 19
         }).addTo(mapInstance);
 
-        // Markers
         L.marker([26.8550, 80.9150])
             .addTo(mapInstance)
             .bindPopup('<b>🔥 अलीगंज अग्निकांड</b><br>15 छात्रों की मौत')
@@ -1378,7 +1358,6 @@ function initMap() {
             .addTo(mapInstance)
             .bindPopup('<b>🏥 SGPGIMS</b>');
 
-        // Women Safe Route Polyline
         const safeRoute = L.polyline([
             [26.8467, 80.9462],
             [26.8500, 80.9450],
@@ -1391,7 +1370,6 @@ function initMap() {
             dashArray: null
         }).addTo(mapInstance).bindPopup('<b>🚺 महिला सुरक्षित मार्ग</b>');
 
-        // Toggle
         document.getElementById('womenToggle').addEventListener('change', function() {
             if (this.checked) {
                 safeRoute.addTo(mapInstance);
@@ -1403,11 +1381,9 @@ function initMap() {
         mapLoaded = true;
         console.log('✅ Map loaded successfully!');
 
-        // Update status text
         const statusText = document.getElementById('mapStatusText');
         if (statusText) statusText.textContent = '✅ Map Loaded!';
 
-        // Force re-render after a tiny delay to ensure proper display
         setTimeout(() => {
             if (mapInstance) mapInstance.invalidateSize();
         }, 200);
