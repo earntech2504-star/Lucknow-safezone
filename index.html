@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <meta name="theme-color" content="#1a5d1a">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="1 day">
 
 <!-- ===== DYNAMIC SEO TAGS (Auto Update) ===== -->
 <title id="pageTitle">Lucknow SafeZone - Complete Safety Platform 2026</title>
 <meta name="description" id="metaDesc" content="Lucknow safety platform: AQI, emergency, women safety, blood donors, coaching safety, live news, SOS alerts. 100% free.">
-<meta name="keywords" id="metaKeywords" content="Lucknow safety, Lucknow AQI, women safety Lucknow, emergency Lucknow, blood donors Lucknow, coaching safety, Lucknow news, SOS alert, safe city Lucknow">
+<meta name="keywords" id="metaKeywords" content="Lucknow safety, Lucknow AQI, women safety Lucknow, emergency Lucknow, blood donors Lucknow, coaching safety, Lucknow news, SOS alert, safe city Lucknow, महिला सुरक्षा, लखनऊ सुरक्षा, लखनऊ एयर क्वालिटी, 1090 लखनऊ">
 <link rel="canonical" href="https://sites.google.com/view/lucknow-safezone/">
 
 <!-- ===== OPEN GRAPH ===== -->
@@ -284,6 +286,18 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .promo-banner .desc{font-size:10px;color:#333;margin:4px 0}
 .promo-banner .sub{font-size:7px;color:var(--tl);margin-top:4px}
 
+/* ===== PROMO BANNERS (AQI & WOMEN) ===== */
+.promo-box{background:#fff3cd;padding:15px;border-radius:8px;margin:12px 10px 8px 10px;text-align:center;border:2px solid #ffc107}
+.promo-box h3{font-size:13px;color:#333;margin-bottom:6px}
+.promo-box a{display:inline-block;background:#1a5d1a;color:#fff;padding:10px 20px;border-radius:40px;text-decoration:none;font-weight:700;font-size:12px;transition:all 0.3s}
+.promo-box a:hover{background:#0d3b0d;transform:scale(1.05)}
+.promo-box.pink{background:#fce4ec;border-color:#e91e63}
+.promo-box.pink a{background:#e91e63}
+.promo-box.pink a:hover{background:#c2185b}
+
+.map-reload-btn{display:block;margin:8px auto 0;padding:6px 16px;background:var(--s);color:#fff;border:none;border-radius:20px;font-size:10px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.3s}
+.map-reload-btn:hover{background:var(--p);transform:scale(1.05)}
+
 @media(min-width:768px){body{max-width:720px}.btn-grid{grid-template-columns:repeat(4,1fr)}.product-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:1024px){body{max-width:960px}.product-grid{grid-template-columns:repeat(4,1fr)}}
 </style>
@@ -348,6 +362,14 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
     </div>
     <div style="font-size:8px;color:var(--tl);text-align:center">🔄 हर 30 मिनट में अपडेट</div>
 </section>
+
+<!-- ===== AQI PROMO BANNER (NEW - ADDED) ===== -->
+<div class="promo-box">
+    <h3>⚠️ AQI Kharab Hai? Apne Ghar Ko Safe Rakhein</h3>
+    <a href="https://amzn.to/4eH8tTY" target="_blank" rel="noopener sponsored">
+        → Best Air Purifiers on Amazon - 40% Off
+    </a>
+</div>
 
 <!-- ===== COACHING CHECKER ===== -->
 <section class="card" style="border:2px solid var(--dan)">
@@ -462,7 +484,15 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
     </div>
 </section>
 
-<!-- ===== MAP ===== -->
+<!-- ===== MAHILA SURAKSHA PROMO BANNER (NEW - ADDED) ===== -->
+<div class="promo-box pink">
+    <h3>🚺 महिला सुरक्षा - अपनी सुरक्षा खुद करें</h3>
+    <a href="https://amzn.to/4v04s3g" target="_blank" rel="noopener sponsored">
+        → Best Safety Kit & Self-Defense Products on Amazon
+    </a>
+</div>
+
+<!-- ===== MAP (FIXED - FAST LOAD) ===== -->
 <section class="card" id="mapCard">
     <div class="section-title">📍 सुरक्षा मानचित्र <span class="live-dot"></span> <span class="badge badge-green">🚺 सेफ रूट</span></div>
     <div class="map-controls">
@@ -474,7 +504,8 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
     <div id="map">
         <div class="map-fallback" id="mapLoading">
             <div class="icon">🗺️</div>
-            <div>मानचित्र लोड हो रहा है...</div>
+            <div id="mapStatusText">मानचित्र लोड हो रहा है...</div>
+            <button class="map-reload-btn" onclick="forceLoadMap()" style="margin-top:10px;">🔄 Map Reload</button>
         </div>
     </div>
     <div class="map-legend">
@@ -785,7 +816,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 <script>
 // ================================================================
-// ✅ COMPLETE JAVASCRIPT - ALL FEATURES
+// ✅ COMPLETE JAVASCRIPT - ALL FEATURES (WITH FIXED MAP)
 // ================================================================
 
 // ===== AUTO SEO UPDATE =====
@@ -796,7 +827,8 @@ function updateSEO() {
         'Lucknow safety', 'Lucknow AQI', 'women safety Lucknow',
         'emergency Lucknow', 'blood donors Lucknow', 'coaching safety',
         'Lucknow news', 'SOS alert', 'safe city Lucknow',
-        'Lucknow police', '1090 Lucknow', '112 Lucknow'
+        'Lucknow police', '1090 Lucknow', '112 Lucknow',
+        'महिला सुरक्षा', 'लखनऊ सुरक्षा', 'लखनऊ एयर क्वालिटी'
     ];
     document.getElementById('metaKeywords').content = keywords.join(', ') + ', ' + dateStr;
     document.getElementById('pageTitle').textContent = 
@@ -1262,34 +1294,164 @@ const tips=['निकास मार्ग पहचानें','Location sh
     document.getElementById('tipNumber').innerText=(d%tips.length)+1;
 })();
 
-// ===== MAP =====
-let mapInstance=null, mapLoaded=false;
-function initMap(){
-    if(mapLoaded)return;
-    if(typeof L==='undefined'){setTimeout(initMap,500);return}
-    try{
-        document.getElementById('mapLoading').style.display='none';
-        mapInstance=L.map('map',{center:[26.8467,80.9462],zoom:12,zoomControl:true});
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OSM',maxZoom:19}).addTo(mapInstance);
-        L.marker([26.8550,80.9150]).addTo(mapInstance).bindPopup('<b>🔥 अलीगंज अग्निकांड</b><br>15 छात्रों की मौत').openPopup();
-        L.marker([26.8400,80.9400]).addTo(mapInstance).bindPopup('<b>🛡️ हजरतगंज PS</b>');
-        L.marker([26.8600,80.9500]).addTo(mapInstance).bindPopup('<b>🛡️ गोमती नगर PS</b>');
-        L.marker([26.8500,80.9350]).addTo(mapInstance).bindPopup('<b>🏥 SGPGIMS</b>');
-        const sr=L.polyline([[26.8467,80.9462],[26.8500,80.9450],[26.8550,80.9440],[26.8600,80.9430]],{color:'#2e7d32',weight:5,opacity:.8}).addTo(mapInstance).bindPopup('<b>🚺 महिला सुरक्षित मार्ग</b>');
-        document.getElementById('womenToggle').addEventListener('change',function(){ if(this.checked)sr.addTo(mapInstance); else mapInstance.removeLayer(sr); });
-        mapLoaded=true;
-    }catch(e){ console.warn('Map error:',e); }
+// ================================================================
+// ✅ MAP - FIXED: FAST LOADING & CLEAR
+// ================================================================
+let mapInstance = null;
+let mapLoaded = false;
+let mapInitAttempts = 0;
+const MAX_MAP_ATTEMPTS = 5;
+
+function forceLoadMap() {
+    const statusText = document.getElementById('mapStatusText');
+    if (statusText) statusText.textContent = '🔄 Reloading map...';
+    mapLoaded = false;
+    mapInitAttempts = 0;
+    if (mapInstance) {
+        try { mapInstance.remove(); } catch(e) {}
+        mapInstance = null;
+    }
+    // Give a small delay before retrying
+    setTimeout(initMap, 300);
 }
-if('IntersectionObserver' in window){
-    const mo=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ initMap(); mo.disconnect(); } }); },{rootMargin:'200px'});
-    mo.observe(document.getElementById('mapCard'));
-}else{ window.addEventListener('load',()=>setTimeout(initMap,1000)); }
+
+function initMap() {
+    // 1. Already loaded check
+    if (mapLoaded && mapInstance) {
+        return;
+    }
+
+    // 2. Check if Leaflet library is available
+    if (typeof L === 'undefined') {
+        mapInitAttempts++;
+        if (mapInitAttempts < MAX_MAP_ATTEMPTS) {
+            const statusText = document.getElementById('mapStatusText');
+            if (statusText) statusText.textContent = '⏳ Loading library... (' + mapInitAttempts + '/' + MAX_MAP_ATTEMPTS + ')';
+            setTimeout(initMap, 500);
+        } else {
+            const statusText = document.getElementById('mapStatusText');
+            if (statusText) statusText.textContent = '⚠️ Library error. Tap "Map Reload"';
+            console.warn('Leaflet library not loaded after attempts.');
+        }
+        return;
+    }
+
+    try {
+        const mapElement = document.getElementById('map');
+        if (!mapElement) return;
+
+        // Hide loading text & show map container properly
+        const loadingEl = document.getElementById('mapLoading');
+        if (loadingEl) loadingEl.style.display = 'none';
+
+        // Clear previous instance if any
+        if (mapInstance) {
+            try { mapInstance.remove(); } catch(e) {}
+            mapInstance = null;
+        }
+
+        // Initialize map
+        mapInstance = L.map('map', {
+            center: [26.8467, 80.9462],
+            zoom: 13,
+            zoomControl: true,
+            fadeAnimation: true,
+            attributionControl: true
+        });
+
+        // Tile Layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap',
+            maxZoom: 19
+        }).addTo(mapInstance);
+
+        // Markers
+        L.marker([26.8550, 80.9150])
+            .addTo(mapInstance)
+            .bindPopup('<b>🔥 अलीगंज अग्निकांड</b><br>15 छात्रों की मौत')
+            .openPopup();
+
+        L.marker([26.8400, 80.9400])
+            .addTo(mapInstance)
+            .bindPopup('<b>🛡️ हजरतगंज PS</b>');
+        L.marker([26.8600, 80.9500])
+            .addTo(mapInstance)
+            .bindPopup('<b>🛡️ गोमती नगर PS</b>');
+        L.marker([26.8500, 80.9350])
+            .addTo(mapInstance)
+            .bindPopup('<b>🏥 SGPGIMS</b>');
+
+        // Women Safe Route Polyline
+        const safeRoute = L.polyline([
+            [26.8467, 80.9462],
+            [26.8500, 80.9450],
+            [26.8550, 80.9440],
+            [26.8600, 80.9430]
+        ], {
+            color: '#2e7d32',
+            weight: 6,
+            opacity: 0.9,
+            dashArray: null
+        }).addTo(mapInstance).bindPopup('<b>🚺 महिला सुरक्षित मार्ग</b>');
+
+        // Toggle
+        document.getElementById('womenToggle').addEventListener('change', function() {
+            if (this.checked) {
+                safeRoute.addTo(mapInstance);
+            } else {
+                mapInstance.removeLayer(safeRoute);
+            }
+        });
+
+        mapLoaded = true;
+        console.log('✅ Map loaded successfully!');
+
+        // Update status text
+        const statusText = document.getElementById('mapStatusText');
+        if (statusText) statusText.textContent = '✅ Map Loaded!';
+
+        // Force re-render after a tiny delay to ensure proper display
+        setTimeout(() => {
+            if (mapInstance) mapInstance.invalidateSize();
+        }, 200);
+
+    } catch (error) {
+        console.error('Map init error:', error);
+        const statusText = document.getElementById('mapStatusText');
+        if (statusText) statusText.textContent = '⚠️ Error. Tap "Map Reload"';
+        const loadingEl = document.getElementById('mapLoading');
+        if (loadingEl) loadingEl.style.display = 'flex';
+    }
+}
+
+// ===== MAP LOADING STRATEGIES (FAST) =====
+
+// Strategy 1: Load immediately on DOM ready (since user is already on page)
+document.addEventListener('DOMContentLoaded', function() {
+    // Small delay to let other things load, but faster than waiting for scroll
+    setTimeout(initMap, 600);
+});
+
+// Strategy 2: Fallback on window load
+window.addEventListener('load', function() {
+    // If map not loaded by now, force it
+    if (!mapLoaded) {
+        setTimeout(initMap, 300);
+    }
+});
+
+// Strategy 3: Emergency fallback after 3 seconds
+setTimeout(function() {
+    if (!mapLoaded) {
+        console.log('⏳ Emergency fallback loading map...');
+        initMap();
+    }
+}, 2500);
 
 // ================================================================
 // ✅ NEW FEATURES - BUSINESS, COACHING, ROUTE, BLOG, LEADS
 // ================================================================
 
-// ===== BUSINESS DIRECTORY =====
 function loadBusinesses() {
     const businesses = JSON.parse(localStorage.getItem('businesses') || '[]');
     const list = document.getElementById('businessList');
@@ -1384,7 +1546,6 @@ function submitBusinessLead(e) {
     loadBusinesses();
 }
 
-// ===== COACHING SAFETY =====
 function reportCoachingSafety() {
     const name = prompt('🏫 कोचिंग का नाम:');
     const issue = prompt('⚠️ क्या समस्या है?\n\n1️⃣ Fire Safety\n2️⃣ No Fire Exit\n3️⃣ No CCTV\n4️⃣ Girls Safety Issue\n5️⃣ Medical Kit Missing\n6️⃣ Other');
@@ -1411,7 +1572,6 @@ function reportCoachingSafety() {
     }
 }
 
-// ===== SAFE ROUTE FINDER =====
 function findSafeRoute() {
     if (navigator.geolocation) {
         const btn = event.target;
@@ -1492,7 +1652,7 @@ setInterval(()=>{
     if(s) s.innerText=78+Math.floor(Math.random()*18);
 },25000);
 
-// ===== INIT NEW FEATURES =====
+// ===== INIT =====
 document.addEventListener('DOMContentLoaded', function() {
     loadBusinesses();
     loadBlogs(3);
@@ -1500,10 +1660,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 console.log('🛡️ Lucknow SafeZone Loaded - 100% Free, No Data Collection, SEO Optimized!');
 console.log('📊 SEO Score: 98%');
-console.log('🔍 Keywords:', document.getElementById('metaKeywords').content);
-console.log('🏢 New Features: Business Directory, Coaching Index, Safe Routes, Auto Blog');
-console.log('🔑 Admin: Double-tap logo (password: admin123)');
 console.log('💰 UPI: icfai.sandeep@oksbi');
+console.log('🗺️ Map will load FAST via multiple strategies.');
 </script>
 </body>
 </html>
