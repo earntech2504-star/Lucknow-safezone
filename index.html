@@ -10,11 +10,13 @@
     <meta name="description" id="metaDesc" content="Lucknow safety platform: AQI, emergency, women safety, blood donors, coaching safety, live news, SOS alerts. 100% free.">
     <meta name="keywords" id="metaKeywords" content="Lucknow safety, Lucknow AQI, women safety Lucknow, emergency Lucknow, blood donors Lucknow, coaching safety, Lucknow news, SOS alert, safe city Lucknow, महिला सुरक्षा, लखनऊ सुरक्षा, लखनऊ एयर क्वालिटी, 1090 लखनऊ">
     <link rel="canonical" href="https://lucknow-safezone.vercel.app/">
+
     <meta property="og:title" content="Lucknow SafeZone - Complete Safety Platform">
     <meta property="og:description" content="Your complete safety guide for Lucknow. AQI, emergency, women safety, live news, SOS alerts. 100% free.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lucknow-safezone.vercel.app/">
     <meta property="og:image" content="https://img.icons8.com/color/96/security-checked--v1.png">
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lucknow SafeZone - Complete Safety Platform">
     <meta name="twitter:description" content="Your complete safety guide for Lucknow. Free. No data collection.">
@@ -60,11 +62,12 @@
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" as="style">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
     <style>
-        /* ===== CSS - COMPLETE ===== */
+        /* ===== CSS - COMPLETE (Minimal, Fast) ===== */
         :root {
             --p: #d32f2f;
             --pd: #b71c1c;
@@ -654,7 +657,7 @@
         .alert-item.new-alert {
             background: var(--pl)
         }
-        /* ===== CAROUSEL ===== */
+        /* ===== AUTO CAROUSEL ===== */
         .carousel-wrapper {
             position: relative;
             overflow: hidden;
@@ -663,7 +666,7 @@
         }
         .carousel-track {
             display: flex;
-            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             will-change: transform;
         }
         .carousel-slide {
@@ -674,37 +677,6 @@
         .carousel-slide .trip-card {
             margin: 0;
             min-width: unset;
-            scroll-snap-align: none;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.55);
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 34px;
-            height: 34px;
-            font-size: 16px;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.25s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(4px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-        .carousel-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: translateY(-50%) scale(1.08);
-        }
-        .carousel-btn.prev {
-            left: 4px;
-        }
-        .carousel-btn.next {
-            right: 4px;
         }
         .carousel-dots {
             display: flex;
@@ -740,7 +712,7 @@
             font-weight: 500;
             letter-spacing: 0.3px;
         }
-        /* ===== TRIP CARD (within carousel) ===== */
+        /* ===== TRIP CARD ===== */
         .trip-card {
             background: var(--cb);
             border-radius: var(--rs);
@@ -1523,23 +1495,98 @@
                 grid-template-columns: repeat(4, 1fr)
             }
         }
-        /* ===== CAROUSEL RESPONSIVE ===== */
-        @media(max-width:480px) {
-            .carousel-btn {
-                width: 28px;
-                height: 28px;
-                font-size: 13px;
-            }
-            .carousel-btn.prev {
-                left: 2px;
-            }
-            .carousel-btn.next {
-                right: 2px;
-            }
-            .carousel-dots .dot {
-                width: 8px;
-                height: 8px;
-            }
+        /* ===== SAFETY ZONE CARDS ===== */
+        .safety-zone-card {
+            background: var(--cb);
+            border-radius: var(--rs);
+            padding: 10px 12px;
+            margin-bottom: 6px;
+            border-left: 4px solid var(--safe);
+            transition: all var(--tr);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .safety-zone-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+        }
+        .safety-zone-card .zone-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .safety-zone-card .zone-info {
+            flex: 1;
+            min-width: 140px;
+        }
+        .safety-zone-card .zone-info .zname {
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .safety-zone-card .zone-info .zarea {
+            font-size: 11px;
+            color: var(--tl);
+        }
+        .safety-zone-card .zone-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+            margin-top: 3px;
+        }
+        .safety-zone-card .zone-features .feat {
+            font-size: 9px;
+            background: var(--bg);
+            padding: 1px 6px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+        }
+        .safety-zone-card .zone-features .feat.yes {
+            color: var(--safe);
+        }
+        .safety-zone-card .zone-features .feat.no {
+            color: var(--dan);
+        }
+        .safety-zone-card .zone-score {
+            font-weight: 700;
+            font-size: 15px;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background: var(--sl);
+            align-self: center;
+        }
+        .safety-zone-card .zone-score.good {
+            background: var(--sl);
+            color: var(--safe);
+        }
+        .safety-zone-card .zone-score.average {
+            background: #fff8e1;
+            color: var(--cau);
+        }
+        .safety-zone-card .zone-score.poor {
+            background: #ffebee;
+            color: var(--dan);
+        }
+        .zone-map-marker {
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        .zone-map-marker.good {
+            background: var(--sl);
+            color: var(--safe);
+        }
+        .zone-map-marker.average {
+            background: #fff8e1;
+            color: var(--cau);
+        }
+        .zone-map-marker.poor {
+            background: #ffebee;
+            color: var(--dan);
         }
     </style>
 
@@ -1603,7 +1650,7 @@
             </div>
         </section>
 
-        <!-- ===== ADSENSE AD UNIT ===== -->
+        <!-- ===== ADSENSE ===== -->
         <div style="margin:8px 10px;text-align:center;background:#f0f0f0;padding:12px;border-radius:8px;font-size:11px;color:#999;">
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="xxxxxxxxxx" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
@@ -1623,56 +1670,53 @@
             <div style="font-size:9px;color:var(--tl);text-align:center">🔄 हर 30 मिनट में अपडेट</div>
         </section>
 
-        <!-- ===== AQI PROMO BANNER ===== -->
+        <!-- ===== AQI PROMO ===== -->
         <div class="promo-box">
             <h3>⚠️ AQI Kharab Hai? Apne Ghar Ko Safe Rakhein</h3>
-            <a href="https://amzn.to/4eH8tTY" target="_blank" rel="noopener sponsored">
-                → Best Air Purifiers on Amazon - 40% Off
-            </a>
+            <a href="https://amzn.to/4eH8tTY" target="_blank" rel="noopener sponsored">→ Best Air Purifiers on Amazon - 40% Off</a>
         </div>
 
         <!-- ============================================================ -->
-        <!-- ===== TRIP CAROUSEL (FIXED - WITH SLIDER CONTROLS) ===== -->
+        <!-- ===== AUTO CAROUSEL (No arrows, auto-slide) ===== -->
         <!-- ============================================================ -->
         <section class="card" id="tripCard" style="border:2px solid var(--g)">
             <div class="section-title">⛰️ सप्ताहांत यात्राएँ <span class="badge">⭐ 4.8</span></div>
-            <!-- Carousel wrapper -->
             <div class="carousel-wrapper" id="homeCarouselWrapper">
-                <div class="carousel-track" id="homeCarouselTrack">
-                    <!-- Slides rendered by JS -->
-                </div>
-                <button class="carousel-btn prev" id="homeCarouselPrev" aria-label="Previous">◀</button>
-                <button class="carousel-btn next" id="homeCarouselNext" aria-label="Next">▶</button>
+                <div class="carousel-track" id="homeCarouselTrack"></div>
             </div>
             <div class="carousel-dots" id="homeCarouselDots"></div>
             <div class="carousel-status" id="homeCarouselStatus">1 / <span id="homeTotalSlides">0</span></div>
         </section>
 
         <!-- ============================================================ -->
-        <!-- ===== NEWS SECTION ===== -->
+        <!-- ===== SAFE ZONES - CCTV & Safety Measures ===== -->
+        <!-- ============================================================ -->
+        <section class="card" style="border:2px solid var(--safe)">
+            <div class="section-title">🛡️ सुरक्षित क्षेत्र <span class="badge badge-green">CCTV + सुरक्षा</span></div>
+            <p style="font-size:11px;color:var(--tl);margin-bottom:6px">📍 कोचिंग, बाजार, सार्वजनिक स्थान — सुरक्षा सुविधाएँ</p>
+            <div id="safeZonesList"></div>
+            <button class="btn btn-secondary btn-block" onclick="showSafeZonesOnMap()" style="margin-top:6px;font-size:11px">🗺️ मानचित्र पर देखें</button>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== NEWS ===== -->
         <!-- ============================================================ -->
         <section class="card" id="homeNewsCard" style="border:2px solid var(--s)">
             <div class="section-title">📰 लाइव समाचार <span class="live-dot"></span> <span class="badge" style="background:var(--s)">RSS</span></div>
             <div id="homeAutoAlerts" role="feed">
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
+                <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
             </div>
             <div style="font-size:9px;color:var(--tl);text-align:right;margin-top:4px" id="homeAlertTimestamp">⏳ लोड हो रहा...</div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- ===== BLOG SECTION ===== -->
-        <!-- ============================================================ -->
+        <!-- ===== BLOG ===== -->
         <section class="card" id="homeBlogCard" style="border:2px solid var(--s)">
             <div class="section-title">📰 सुरक्षा ब्लॉग <span class="badge badge-green">⚡ AI Auto</span></div>
             <div id="homeBlogList"></div>
             <button class="btn btn-secondary btn-block" onclick="loadMoreBlogsHome()" style="margin-top:6px;font-size:11px">📰 और ब्लॉग लोड करें</button>
         </section>
 
-        <!-- ============================================================ -->
         <!-- ===== SAFE ROUTE ===== -->
-        <!-- ============================================================ -->
         <section class="card" id="homeRouteCard" style="border:2px solid var(--ws)">
             <div class="section-title">🚺 गर्ल्स सेफ रूट फाइंडर <span class="badge badge-pink">🌟 Night Safety</span></div>
             <p style="font-size:11px;color:var(--tl);margin-bottom:6px">🌙 रात में सुरक्षित रास्ता चुनें</p>
@@ -1680,25 +1724,17 @@
             <button class="btn btn-pink btn-block" onclick="findSafeRoute()" style="margin-top:6px;font-size:11px">🗺️ मेरा सेफ रूट खोजें</button>
         </section>
 
-        <!-- ============================================================ -->
         <!-- ===== WOMEN SAFETY PRODUCTS ===== -->
-        <!-- ============================================================ -->
         <section class="card" style="border:2px solid var(--ws)">
             <div class="section-title">🛡️ महिला सुरक्षा उत्पाद <span class="badge badge-pink">🌟 Self Defense</span></div>
             <p style="font-size:11px;color:var(--tl);margin-bottom:6px">अपनी सुरक्षा खुद करें - महिलाओं के लिए खास</p>
-            <div class="women-product-grid" id="womenProductGrid">
-                <!-- Dynamic women products loaded by JavaScript -->
-            </div>
+            <div class="women-product-grid" id="womenProductGrid"></div>
         </section>
 
-        <!-- ============================================================ -->
         <!-- ===== WOMEN SAFETY PROMO ===== -->
-        <!-- ============================================================ -->
         <div class="promo-box pink">
             <h3>🚺 महिला सुरक्षा - अपनी सुरक्षा खुद करें</h3>
-            <a href="https://amzn.to/4v04s3g" target="_blank" rel="noopener sponsored">
-                → Best Safety Kit & Self-Defense Products on Amazon
-            </a>
+            <a href="https://amzn.to/4v04s3g" target="_blank" rel="noopener sponsored">→ Best Safety Kit & Self-Defense Products on Amazon</a>
         </div>
 
         <!-- ===== COACHING CHECKER ===== -->
@@ -1723,14 +1759,10 @@
             <p style="font-size:11px;color:var(--tl);margin-bottom:6px">Emergency में blood donors</p>
             <select id="bloodGroupFilter" class="input-field" onchange="filterDonors()">
                 <option value="">सभी Blood Groups</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
+                <option value="A+">A+</option><option value="A-">A-</option>
+                <option value="B+">B+</option><option value="B-">B-</option>
+                <option value="O+">O+</option><option value="O-">O-</option>
+                <option value="AB+">AB+</option><option value="AB-">AB-</option>
             </select>
             <div id="donorsList"></div>
             <button class="btn btn-danger btn-block" onclick="requestBlood()" style="margin-top:6px">🆘 Blood Request</button>
@@ -1776,18 +1808,14 @@
             <div id="institutionList"></div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- ===== PRODUCTS (Affiliate - Kamai) ===== -->
-        <!-- ============================================================ -->
+        <!-- ===== PRODUCTS ===== -->
         <section class="card" style="border:2px solid var(--g)">
             <div class="section-title">🛒 सुरक्षा उत्पाद <span class="badge">🔥 बेस्ट सेलर</span></div>
             <p style="font-size:11px;color:var(--tl);margin-bottom:6px">आपात स्थिति में सुरक्षा के लिए आवश्यक उत्पाद</p>
-            <div class="product-grid" id="productGrid">
-                <!-- Dynamic products loaded by JavaScript -->
-            </div>
+            <div class="product-grid" id="productGrid"></div>
         </section>
 
-        <!-- ===== SOS BUTTON ===== -->
+        <!-- ===== SOS ===== -->
         <section class="card">
             <div class="section-title">🆘 आपातकालीन SOS</div>
             <button class="sos-btn" id="sosBtn">
@@ -1816,9 +1844,7 @@
             </div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- ===== BUSINESS PROMOTION (कमाई - Neche) ===== -->
-        <!-- ============================================================ -->
+        <!-- ===== BUSINESS PROMO ===== -->
         <section class="card" style="border:2px solid var(--g)">
             <div class="section-title">💼 Business Promotion <span class="badge" style="background:var(--g);color:#1a1a1a">🔥 Featured</span></div>
             <div class="promo-banner">
@@ -1836,8 +1862,7 @@
             <button class="btn btn-gold btn-block" id="donateBtn">💰 UPI डोनेशन करें</button>
         </section>
 
-    </div>
-    <!-- end tabHome -->
+    </div><!-- end tabHome -->
 
     <!-- ============================================================ -->
     <!-- ===== TAB: MAP ===== -->
@@ -1846,7 +1871,7 @@
         <section class="card" id="mapCard">
             <div class="section-title">📍 सुरक्षा मानचित्र <span class="live-dot"></span> <span class="badge badge-green">🚺 सेफ रूट</span></div>
             <div class="map-controls">
-                <span class="map-badge">🚺 महिला सुरक्षित पथ</span>
+                <span class="map-badge">🛡️ सुरक्षित क्षेत्र</span>
                 <label style="display:flex;align-items:center;gap:4px;font-size:11px;cursor:pointer">
                     <input type="checkbox" id="womenToggle" checked> ON
                 </label>
@@ -1859,7 +1884,10 @@
                 </div>
             </div>
             <div class="map-legend">
-                <span>🟩 सुरक्षित</span> <span>🟥 सतर्कता</span> <span>🔥 अलीगंज</span>
+                <span>🟢 सुरक्षित (CCTV ✓)</span>
+                <span>🟡 सावधानी (CCTV ⚠️)</span>
+                <span>🔴 सतर्कता (CCTV ✗)</span>
+                <span>🔥 अलीगंज</span>
             </div>
         </section>
     </div>
@@ -1871,10 +1899,7 @@
         <section class="card" id="alertCard">
             <div class="section-title">📰 लाइव समाचार <span class="live-dot"></span> <span class="badge" style="background:var(--s)">RSS</span></div>
             <div id="autoAlerts" role="feed">
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
-                <div class="skeleton"></div>
+                <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
             </div>
             <div style="font-size:9px;color:var(--tl);text-align:right;margin-top:4px" id="alertTimestamp">⏳ लोड हो रहा...</div>
         </section>
@@ -1908,9 +1933,7 @@
         </section>
         <div class="promo-box pink">
             <h3>🚺 महिला सुरक्षा - अपनी सुरक्षा खुद करें</h3>
-            <a href="https://amzn.to/4v04s3g" target="_blank" rel="noopener sponsored">
-                → Best Safety Kit & Self-Defense Products on Amazon
-            </a>
+            <a href="https://amzn.to/4v04s3g" target="_blank" rel="noopener sponsored">→ Best Safety Kit & Self-Defense Products on Amazon</a>
         </div>
     </div>
 
@@ -1990,13 +2013,8 @@
     <div id="tabTrip" class="tab-section">
         <section class="card" id="tripCardTab" style="border:2px solid var(--g)">
             <div class="section-title">⛰️ सप्ताहांत यात्राएँ <span class="badge">⭐ 4.8</span></div>
-            <!-- Carousel wrapper for Trip tab -->
             <div class="carousel-wrapper" id="tripCarouselWrapper">
-                <div class="carousel-track" id="tripCarouselTrack">
-                    <!-- Slides rendered by JS -->
-                </div>
-                <button class="carousel-btn prev" id="tripCarouselPrev" aria-label="Previous">◀</button>
-                <button class="carousel-btn next" id="tripCarouselNext" aria-label="Next">▶</button>
+                <div class="carousel-track" id="tripCarouselTrack"></div>
             </div>
             <div class="carousel-dots" id="tripCarouselDots"></div>
             <div class="carousel-status" id="tripCarouselStatus">1 / <span id="tripTotalSlides">0</span></div>
@@ -2050,10 +2068,10 @@
     </script>
     <script>
         // ================================================================
-        // ✅ COMPLETE JAVASCRIPT - CAROUSEL FIXED + ALL FEATURES
+        // ✅ COMPLETE JS - Auto Carousel + Safe Zones + Fast Load
         // ================================================================
 
-        // ===== DATA STORE =====
+        // ===== DATA =====
         const TRIPS = [
             { name: 'अयोध्या', lat: 26.79, lng: 82.19, icon: '🏛️', desc: 'श्री राम जन्मभूमि', distance: '135 किमी',
                 rating: 4.9, stars: '★★★★★', status: 'safe', tip: 'सुबह जल्दी जाएँ', temp: '32°C' },
@@ -2077,16 +2095,108 @@
                 rating: 4.3, stars: '★★★★☆', status: 'danger', tip: 'ट्रैकिंग के लिए तैयार रहें', temp: '31°C' }
         ];
 
-        // ===== PRODUCTS =====
+        // ===== SAFE ZONES with CCTV & Safety Features =====
+        const SAFE_ZONES = [{
+            name: '🏫 Allen Career Institute',
+            area: 'Aliganj',
+            lat: 26.8550,
+            lng: 80.9150,
+            features: { cctv: true, fire: false, exit: false, girls: true, medical: false, noc: false },
+            score: 'poor',
+            scoreLabel: '⚠️ Poor',
+            icon: '🏫'
+        }, {
+            name: '✅ Physics Wallah',
+            area: 'Gomti Nagar',
+            lat: 26.8600,
+            lng: 80.9500,
+            features: { cctv: true, fire: true, exit: true, girls: true, medical: true, noc: true },
+            score: 'good',
+            scoreLabel: '✅ Excellent',
+            icon: '✅'
+        }, {
+            name: '🟡 Aakash Institute',
+            area: 'Hazratganj',
+            lat: 26.8400,
+            lng: 80.9400,
+            features: { cctv: true, fire: false, exit: true, girls: true, medical: true, noc: false },
+            score: 'average',
+            scoreLabel: '📊 Average',
+            icon: '🟡'
+        }, {
+            name: '🛍️ Hazratganj Market',
+            area: 'Hazratganj',
+            lat: 26.8380,
+            lng: 80.9420,
+            features: { cctv: true, fire: true, exit: true, girls: false, medical: false, noc: true },
+            score: 'good',
+            scoreLabel: '✅ Safe',
+            icon: '🛍️'
+        }, {
+            name: '🏥 SGPGIMS Hospital',
+            area: 'Gomti Nagar',
+            lat: 26.8500,
+            lng: 80.9350,
+            features: { cctv: true, fire: true, exit: true, girls: true, medical: true, noc: true },
+            score: 'good',
+            scoreLabel: '✅ Excellent',
+            icon: '🏥'
+        }, {
+            name: '🚉 Lucknow Junction',
+            area: 'Charbagh',
+            lat: 26.8300,
+            lng: 80.9200,
+            features: { cctv: true, fire: true, exit: true, girls: true, medical: true, noc: true },
+            score: 'good',
+            scoreLabel: '✅ Safe',
+            icon: '🚉'
+        }, {
+            name: '🏫 Kapurthala Coaching Hub',
+            area: 'Kapurthala',
+            lat: 26.8450,
+            lng: 80.9250,
+            features: { cctv: false, fire: true, exit: false, girls: true, medical: false, noc: false },
+            score: 'poor',
+            scoreLabel: '⚠️ Poor',
+            icon: '🏫'
+        }, {
+            name: '📚 Gomti Nagar Library',
+            area: 'Gomti Nagar',
+            lat: 26.8620,
+            lng: 80.9550,
+            features: { cctv: true, fire: true, exit: true, girls: true, medical: false, noc: true },
+            score: 'good',
+            scoreLabel: '✅ Safe',
+            icon: '📚'
+        }, {
+            name: '🚺 Indira Nagar Market',
+            area: 'Indira Nagar',
+            lat: 26.8700,
+            lng: 80.9650,
+            features: { cctv: true, fire: false, exit: false, girls: false, medical: false, noc: false },
+            score: 'average',
+            scoreLabel: '📊 Average',
+            icon: '🚺'
+        }, {
+            name: '🏫 Aminabad Coaching Center',
+            area: 'Aminabad',
+            lat: 26.8200,
+            lng: 80.9100,
+            features: { cctv: false, fire: false, exit: false, girls: false, medical: false, noc: false },
+            score: 'poor',
+            scoreLabel: '🔴 Danger',
+            icon: '🏫'
+        }];
+
         const PRODUCTS = [
             { name: 'Pepper Spray', icon: '🌶️', price: '₹299', tag: 'Top', commission: '⭐ कमीशन',
                 link: 'https://www.amazon.in/IMPOWER-Defence-Unisex-Pepper-Sprays/dp/B075XRD8DT?crid=3D6DLAX64O99R&dib=eyJ2IjoiMSJ9.wk9aKVU3pbEOWzVfs7liYtVn5fvwlqJ4DnozeD-1lQKMH87bl7TCoxd9De64U9nEhD9oms8XJFpd9i8p3S57zv1TvHuACs8mUY3A1sJuhyhvhxi74FwGAS2IO0wjfeHFJTn0txLXrCHEbYb0JaH4P4zg2Ttd0Bc2J8qoDhxYnaDJk29OMko0LN2mUtPm6xx4XL0fyydcNHTluoC9vYKTwF4-3EVcvOUtF_PUP1Rg5o4354rfoFzRR6QpByV2rnszjmsKQU4DQCbf32BDW0Yfn8sLxL032tKjJgyh3rDucME.ZjbB60pJWGk0a5RCt_kJcxIrQLOAv6emHYpGlmS91ro&dib_tag=se&keywords=pepper+spray+for+women&qid=1782386477&sprefix=pepper+spray%2Caps%2C297&sr=8-2&linkCode=ll2&tag=securegadgets-21&linkId=d0b7fecc18012afbb533c0e9166b24f7&ref_=as_li_ss_tl' },
             { name: 'Stun Gun', icon: '⚡', price: '₹799', tag: 'Hot', commission: '⭐ कमीशन', link: 'https://amzn.to/3QJsHEJ' },
             { name: 'GPS Tracker', icon: '📍', price: '₹999', tag: '', commission: '⭐ कमीशन', link: 'https://amzn.to/4v0QJt9' },
             { name: 'अग्निशामक', icon: '🔥', price: '₹999', tag: 'Best', commission: '⭐ कमीशन',
-            link: 'https://amzn.to/4wu7EWf' },
+                link: 'https://amzn.to/4wu7EWf' },
             { name: 'SOS Alarm', icon: '🆘', price: '₹399', tag: '', commission: '⭐ कमीशन',
-            link: 'https://amzn.to/4oM653d' },
+                link: 'https://amzn.to/4oM653d' },
             { name: 'Safety Kit', icon: '🎒', price: '₹1499', tag: 'New', commission: '⭐ कमीशन',
                 link: 'https://amzn.to/4v04s3g' }
         ];
@@ -2118,56 +2228,34 @@
         ];
 
         // ================================================================
-        // ✅ CAROUSEL CLASS
+        // ✅ AUTO CAROUSEL (No arrows, pure auto-slide)
         // ================================================================
-        class TripCarousel {
-            constructor(containerId, trackId, prevId, nextId, dotsId, statusId, totalId) {
-                this.container = document.getElementById(containerId);
+        class AutoCarousel {
+            constructor(trackId, dotsId, statusId, totalId) {
                 this.track = document.getElementById(trackId);
-                this.prevBtn = document.getElementById(prevId);
-                this.nextBtn = document.getElementById(nextId);
                 this.dotsContainer = document.getElementById(dotsId);
                 this.statusEl = document.getElementById(statusId);
                 this.totalEl = document.getElementById(totalId);
-
                 this.slides = [];
                 this.currentIndex = 0;
                 this.totalSlides = 0;
-                this.autoInterval = null;
+                this.interval = null;
                 this.isTransitioning = false;
 
                 if (!this.track) return;
-
-                // Bind events
-                this.prevBtn?.addEventListener('click', () => this.prev());
-                this.nextBtn?.addEventListener('click', () => this.next());
-                this.container?.addEventListener('mouseenter', () => this.pauseAuto());
-                this.container?.addEventListener('mouseleave', () => this.startAuto());
-
-                // Touch support
-                let startX = 0;
-                let isDragging = false;
-                this.track.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                    isDragging = true;
-                    this.pauseAuto();
-                }, { passive: true });
-                this.track.addEventListener('touchend', (e) => {
-                    if (!isDragging) return;
-                    const endX = e.changedTouches[0].clientX;
-                    const diff = startX - endX;
-                    if (Math.abs(diff) > 40) {
-                        if (diff > 0) this.next();
-                        else this.prev();
-                    }
-                    isDragging = false;
-                    this.startAuto();
-                }, { passive: true });
+                // Pause on hover
+                const wrapper = this.track.closest('.carousel-wrapper');
+                if (wrapper) {
+                    wrapper.addEventListener('mouseenter', () => this.pause());
+                    wrapper.addEventListener('mouseleave', () => this.start());
+                    // Touch support: pause on touch, resume after
+                    wrapper.addEventListener('touchstart', () => this.pause(), { passive: true });
+                    wrapper.addEventListener('touchend', () => { setTimeout(() => this.start(), 3000); }, { passive: true });
+                }
             }
 
             setData(data) {
                 if (!this.track) return;
-                // Shuffle for variety
                 const shuffled = [...data].sort(() => Math.random() - 0.5);
                 this.slides = shuffled;
                 this.totalSlides = shuffled.length;
@@ -2175,7 +2263,7 @@
                 this.render();
                 this.updateDots();
                 this.updateStatus();
-                this.startAuto();
+                this.start();
             }
 
             render() {
@@ -2210,7 +2298,6 @@
                     `).join('');
                 this.goTo(0);
                 if (this.totalEl) this.totalEl.textContent = this.totalSlides;
-                // Rebuild dots
                 this.buildDots();
             }
 
@@ -2223,7 +2310,7 @@
                     dot.setAttribute('data-index', i);
                     dot.addEventListener('click', () => {
                         this.goTo(i);
-                        this.startAuto();
+                        this.start();
                     });
                     this.dotsContainer.appendChild(dot);
                 }
@@ -2254,38 +2341,31 @@
                 this.updateStatus();
             }
 
-            prev() {
-                if (this.isTransitioning || this.totalSlides <= 1) return;
-                this.isTransitioning = true;
-                this.goTo(this.currentIndex - 1);
-                setTimeout(() => { this.isTransitioning = false; }, 500);
-            }
-
             next() {
                 if (this.isTransitioning || this.totalSlides <= 1) return;
                 this.isTransitioning = true;
                 this.goTo(this.currentIndex + 1);
-                setTimeout(() => { this.isTransitioning = false; }, 500);
+                setTimeout(() => { this.isTransitioning = false; }, 700);
             }
 
-            startAuto() {
-                this.pauseAuto();
+            start() {
+                this.pause();
                 if (this.totalSlides <= 1) return;
-                this.autoInterval = setInterval(() => {
-                    if (!this.container) return;
+                this.interval = setInterval(() => {
+                    if (!this.track) return;
                     this.next();
                 }, 4500);
             }
 
-            pauseAuto() {
-                if (this.autoInterval) {
-                    clearInterval(this.autoInterval);
-                    this.autoInterval = null;
+            pause() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                    this.interval = null;
                 }
             }
 
             destroy() {
-                this.pauseAuto();
+                this.pause();
                 this.slides = [];
                 this.totalSlides = 0;
             }
@@ -2296,29 +2376,91 @@
         let tripCarousel = null;
 
         function initCarousels() {
-            // Home carousel
-            homeCarousel = new TripCarousel(
-                'homeCarouselWrapper',
-                'homeCarouselTrack',
-                'homeCarouselPrev',
-                'homeCarouselNext',
-                'homeCarouselDots',
-                'homeCarouselStatus',
-                'homeTotalSlides'
-            );
+            homeCarousel = new AutoCarousel('homeCarouselTrack', 'homeCarouselDots', 'homeCarouselStatus',
+            'homeTotalSlides');
             homeCarousel.setData(TRIPS);
 
-            // Trip tab carousel
-            tripCarousel = new TripCarousel(
-                'tripCarouselWrapper',
-                'tripCarouselTrack',
-                'tripCarouselPrev',
-                'tripCarouselNext',
-                'tripCarouselDots',
-                'tripCarouselStatus',
-                'tripTotalSlides'
-            );
+            tripCarousel = new AutoCarousel('tripCarouselTrack', 'tripCarouselDots', 'tripCarouselStatus',
+            'tripTotalSlides');
             tripCarousel.setData(TRIPS);
+        }
+
+        // ================================================================
+        // ✅ SAFE ZONES RENDER
+        // ================================================================
+        function renderSafeZones() {
+            const list = document.getElementById('safeZonesList');
+            if (!list) return;
+            const sorted = [...SAFE_ZONES].sort((a, b) => {
+                const order = { good: 0, average: 1, poor: 2 };
+                return (order[a.score] || 0) - (order[b.score] || 0);
+            });
+            list.innerHTML = sorted.map(z => {
+                const feat = z.features;
+                const scoreClass = z.score === 'good' ? 'good' : z.score === 'average' ? 'average' : 'poor';
+                const f = [
+                    { key: 'cctv', label: '📹 CCTV', val: feat.cctv },
+                    { key: 'fire', label: '🔥 Fire Exit', val: feat.fire },
+                    { key: 'exit', label: '🚪 Emergency Exit', val: feat.exit },
+                    { key: 'girls', label: '🚺 Girls Safety', val: feat.girls },
+                    { key: 'medical', label: '💊 Medical Kit', val: feat.medical },
+                    { key: 'noc', label: '📋 Fire NOC', val: feat.noc }
+                ];
+                return `
+                        <div class="safety-zone-card" style="border-left-color: ${z.score === 'good' ? 'var(--safe)' : z.score === 'average' ? 'var(--cau)' : 'var(--dan)'}">
+                            <div class="zone-icon">${z.icon}</div>
+                            <div class="zone-info">
+                                <div class="zname">${z.name}</div>
+                                <div class="zarea">📍 ${z.area}</div>
+                                <div class="zone-features">
+                                    ${f.map(fe => `<span class="feat ${fe.val ? 'yes' : 'no'}">${fe.label} ${fe.val ? '✅' : '❌'}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="zone-score ${scoreClass}">${z.scoreLabel}</div>
+                        </div>
+                    `;
+            }).join('');
+        }
+
+        // ================================================================
+        // ✅ SHOW SAFE ZONES ON MAP
+        // ================================================================
+        function showSafeZonesOnMap() {
+            const mapTab = document.querySelector('.tab[data-tab="tabMap"]');
+            if (mapTab) {
+                switchTab('tabMap', mapTab);
+                setTimeout(() => {
+                    if (window.mapInstance) {
+                        // Zoom to show all zones
+                        const bounds = SAFE_ZONES.map(z => [z.lat, z.lng]);
+                        const group = L.featureGroup(bounds.map(p => L.marker(p)));
+                        mapInstance.fitBounds(group.getBounds().pad(0.1));
+                        // Add markers with popups
+                        SAFE_ZONES.forEach(z => {
+                            const color = z.score === 'good' ? '#2e7d32' : z.score === 'average' ? '#f9a825' :
+                                '#c62828';
+                            const marker = L.circleMarker([z.lat, z.lng], {
+                                radius: 10,
+                                color: color,
+                                fillColor: color,
+                                fillOpacity: 0.7,
+                                weight: 2
+                            }).addTo(mapInstance);
+                            const feats = Object.entries(z.features).map(([k, v]) =>
+                                `${k}: ${v ? '✅' : '❌'}`).join('<br>');
+                            marker.bindPopup(`
+                                    <b>${z.name}</b><br>
+                                    📍 ${z.area}<br>
+                                    🛡️ ${z.scoreLabel}<br>
+                                    <hr style="margin:4px 0">
+                                    ${feats}
+                                `);
+                        });
+                    } else {
+                        alert('🗺️ मानचित्र लोड हो रहा है, कृपया कुछ सेकंड बाद पुन: प्रयास करें।');
+                    }
+                }, 500);
+            }
         }
 
         // ================================================================
@@ -2341,15 +2483,10 @@
                 loadHomeBlogs(homeBlogCount); }
             if (tabId === 'tabBusiness') loadBusinesses();
 
-            // Refresh carousels if needed
-            if (tabId === 'tabTrip' && tripCarousel) {
-                tripCarousel.pauseAuto();
-                tripCarousel.startAuto();
-            }
-            if (tabId === 'tabHome' && homeCarousel) {
-                homeCarousel.pauseAuto();
-                homeCarousel.startAuto();
-            }
+            if (tabId === 'tabTrip' && tripCarousel) { tripCarousel.pause();
+                tripCarousel.start(); }
+            if (tabId === 'tabHome' && homeCarousel) { homeCarousel.pause();
+                homeCarousel.start(); }
 
             if (history.pushState) history.pushState(null, null, '#' + tabId);
         }
@@ -2366,7 +2503,6 @@
         // ================================================================
         // ✅ RENDER FUNCTIONS
         // ================================================================
-
         function renderProducts() {
             const grid = document.getElementById('productGrid');
             if (!grid) return;
@@ -2418,7 +2554,6 @@
                         </div>
                     `).join('');
             }
-
             const homeList = document.getElementById('homeRouteList');
             if (homeList) {
                 homeList.innerHTML = ROUTES.map(r => `
@@ -2433,32 +2568,43 @@
         function renderCoachingIndex() {
             const container = document.getElementById('coachingIndex');
             if (!container) return;
-            const coachingData = [
-                { name: '🔥 Allen Career Institute - अलीगंज', badge: 'poor', badgeLabel: '⚠️ Poor', params: [
-                        { icon: '🔥', label: 'Fire Safety: ❌ No' },
-                        { icon: '📹', label: 'CCTV: ✅ Yes' },
-                        { icon: '🚺', label: 'Girls Safety: ⚠️ Partial' },
-                        { icon: '🚪', label: 'Emergency Exit: ❌ No' },
-                        { icon: '💊', label: 'Medical Kit: ⚠️ Partial' },
-                        { icon: '📋', label: 'NOC: ❌ No' }
-                    ] },
-                { name: '✅ Physics Wallah - गोमती नगर', badge: 'excellent', badgeLabel: '🌟 Excellent', params: [
-                        { icon: '🔥', label: 'Fire Safety: ✅ Yes' },
-                        { icon: '📹', label: 'CCTV: ✅ Yes' },
-                        { icon: '🚺', label: 'Girls Safety: ✅ Yes' },
-                        { icon: '🚪', label: 'Emergency Exit: ✅ Yes' },
-                        { icon: '💊', label: 'Medical Kit: ✅ Yes' },
-                        { icon: '📋', label: 'NOC: ✅ Yes' }
-                    ] },
-                { name: '🟡 Aakash Institute - हजरतगंज', badge: 'average', badgeLabel: '📊 Average', params: [
-                        { icon: '🔥', label: 'Fire Safety: ⚠️ Partial' },
-                        { icon: '📹', label: 'CCTV: ✅ Yes' },
-                        { icon: '🚺', label: 'Girls Safety: ✅ Yes' },
-                        { icon: '🚪', label: 'Emergency Exit: ⚠️ Partial' },
-                        { icon: '💊', label: 'Medical Kit: ✅ Yes' },
-                        { icon: '📋', label: 'NOC: ⚠️ Under Review' }
-                    ] }
-            ];
+            const coachingData = [{
+                name: '🔥 Allen Career Institute - अलीगंज',
+                badge: 'poor',
+                badgeLabel: '⚠️ Poor',
+                params: [
+                    { icon: '🔥', label: 'Fire Safety: ❌ No' },
+                    { icon: '📹', label: 'CCTV: ✅ Yes' },
+                    { icon: '🚺', label: 'Girls Safety: ⚠️ Partial' },
+                    { icon: '🚪', label: 'Emergency Exit: ❌ No' },
+                    { icon: '💊', label: 'Medical Kit: ⚠️ Partial' },
+                    { icon: '📋', label: 'NOC: ❌ No' }
+                ]
+            }, {
+                name: '✅ Physics Wallah - गोमती नगर',
+                badge: 'excellent',
+                badgeLabel: '🌟 Excellent',
+                params: [
+                    { icon: '🔥', label: 'Fire Safety: ✅ Yes' },
+                    { icon: '📹', label: 'CCTV: ✅ Yes' },
+                    { icon: '🚺', label: 'Girls Safety: ✅ Yes' },
+                    { icon: '🚪', label: 'Emergency Exit: ✅ Yes' },
+                    { icon: '💊', label: 'Medical Kit: ✅ Yes' },
+                    { icon: '📋', label: 'NOC: ✅ Yes' }
+                ]
+            }, {
+                name: '🟡 Aakash Institute - हजरतगंज',
+                badge: 'average',
+                badgeLabel: '📊 Average',
+                params: [
+                    { icon: '🔥', label: 'Fire Safety: ⚠️ Partial' },
+                    { icon: '📹', label: 'CCTV: ✅ Yes' },
+                    { icon: '🚺', label: 'Girls Safety: ✅ Yes' },
+                    { icon: '🚪', label: 'Emergency Exit: ⚠️ Partial' },
+                    { icon: '💊', label: 'Medical Kit: ✅ Yes' },
+                    { icon: '📋', label: 'NOC: ⚠️ Under Review' }
+                ]
+            }];
             container.innerHTML = coachingData.map(c => `
                     <div class="coaching-index-card" style="border-left-color: ${c.badge === 'poor' ? '#f44336' : c.badge === 'excellent' ? '#4caf50' : '#ffc107'}">
                         <div class="header"><span class="name">${c.name}</span><span class="safety-badge ${c.badge}">${c.badgeLabel}</span></div>
@@ -2490,7 +2636,6 @@
         async function fetchHomeRSSNews() {
             const box = document.getElementById('homeAutoAlerts');
             const timeEl = document.getElementById('homeAlertTimestamp');
-
             const cached = sessionStorage.getItem('home_news_cache');
             const cacheTime = sessionStorage.getItem('home_news_time');
             if (cached && cacheTime && (Date.now() - parseInt(cacheTime)) < 300000) {
@@ -2498,7 +2643,6 @@
                 timeEl.innerText = '🔄 Cached: ' + new Date(parseInt(cacheTime)).toLocaleTimeString('hi-IN');
                 return;
             }
-
             box.innerHTML = '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
             try {
                 const rssUrl =
@@ -2571,7 +2715,6 @@
         async function fetchRSSNews() {
             const box = document.getElementById('autoAlerts');
             const timeEl = document.getElementById('alertTimestamp');
-
             const cached = sessionStorage.getItem('news_cache');
             const cacheTime = sessionStorage.getItem('news_time');
             if (cached && cacheTime && (Date.now() - parseInt(cacheTime)) < 300000) {
@@ -2579,7 +2722,6 @@
                 timeEl.innerText = '🔄 Cached: ' + new Date(parseInt(cacheTime)).toLocaleTimeString('hi-IN');
                 return;
             }
-
             box.innerHTML = '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
             try {
                 const rssUrl =
@@ -3306,6 +3448,28 @@
                     maxZoom: 19
                 }).addTo(mapInstance);
 
+                // Add safe zones to map
+                SAFE_ZONES.forEach(z => {
+                    const color = z.score === 'good' ? '#2e7d32' : z.score === 'average' ? '#f9a825' : '#c62828';
+                    const marker = L.circleMarker([z.lat, z.lng], {
+                        radius: 9,
+                        color: color,
+                        fillColor: color,
+                        fillOpacity: 0.7,
+                        weight: 2
+                    }).addTo(mapInstance);
+                    const feats = Object.entries(z.features).map(([k, v]) =>
+                        `${k}: ${v ? '✅' : '❌'}`).join('<br>');
+                    marker.bindPopup(`
+                            <b>${z.name}</b><br>
+                            📍 ${z.area}<br>
+                            🛡️ ${z.scoreLabel}<br>
+                            <hr style="margin:4px 0">
+                            ${feats}
+                        `);
+                });
+
+                // Original markers
                 L.marker([26.8550, 80.9150])
                     .addTo(mapInstance)
                     .bindPopup('<b>🔥 अलीगंज अग्निकांड</b><br>15 छात्रों की मौत')
@@ -3336,7 +3500,7 @@
 
                 mapLoaded = true;
                 window.mapInstance = mapInstance;
-                console.log('✅ Map loaded!');
+                console.log('✅ Map loaded with safe zones!');
 
                 const statusText = document.getElementById('mapStatusText');
                 if (statusText) statusText.textContent = '✅ Map Loaded!';
@@ -3516,6 +3680,7 @@
             // Init carousels
             initCarousels();
 
+            renderSafeZones();
             renderProducts();
             renderWomenProducts();
             renderInstitutions();
@@ -3531,22 +3696,21 @@
 
             setInterval(fetchRSSNews, 180000);
             setInterval(fetchHomeRSSNews, 180000);
-            // Refresh carousels data occasionally
             setInterval(() => {
-                if (homeCarousel) { homeCarousel.pauseAuto();
+                if (homeCarousel) { homeCarousel.pause();
                     homeCarousel.setData(TRIPS); }
-                if (tripCarousel) { tripCarousel.pauseAuto();
+                if (tripCarousel) { tripCarousel.pause();
                     tripCarousel.setData(TRIPS); }
             }, 300000);
             setInterval(() => { renderProducts();
                 renderWomenProducts(); }, 300000);
         });
 
-        console.log('🛡️ Lucknow SafeZone Loaded - Carousel Fixed!');
+        console.log('🛡️ Lucknow SafeZone Loaded - Auto Carousel + Safe Zones!');
         console.log('📊 SEO Optimized | Fast Loading | All Tabs Working');
         console.log('💰 UPI: icfai.sandeep@oksbi');
-        console.log('📰 News & Content refresh every 3 minutes');
-        console.log('🔥 Carousel with Prev/Next, Dots & Auto-slide!');
+        console.log('🛡️ Safe Zones with CCTV & Safety Features added!');
+        console.log('🔥 Auto Carousel - No arrows, smooth auto-slide!');
         console.log('✅ All features working properly!');
     </script>
 </body>
