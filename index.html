@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
@@ -300,13 +300,13 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 </head>
 <body>
 
-<!-- ===== TOP BAR (UPDATED - More Engaging) ===== -->
+<!-- ===== TOP BAR ===== -->
 <div class="top-bar"><span>🚨 लखनऊ सुरक्षित · 112 · 1090 · सुरक्षा हर नागरिक का अधिकार</span></div>
 
-<!-- ===== DISCLAIMER (UPDATED - More Engaging) ===== -->
+<!-- ===== DISCLAIMER ===== -->
 <div class="disclaimer">🛡️ <strong>सामुदायिक सुरक्षा</strong> · आपात 112 · महिला सुरक्षा 1090 · <span style="color:var(--gd);font-weight:700;">सुरक्षित लखनऊ</span></div>
 
-<!-- ===== ALERT BANNER (Dynamic) ===== -->
+<!-- ===== ALERT BANNER ===== -->
 <div class="alert-banner" id="breakingAlert">
     <span class="pulse"></span>
     <div><strong>🔥 BREAKING:</strong> <span id="breakingText">लोड हो रहा...</span></div>
@@ -339,6 +339,10 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 </nav>
 
 <!-- ===== ALL TAB SECTIONS ===== -->
+
+<!-- ============================================================ -->
+<!-- ===== TAB: HOME (TRIP SECTION ADDED BACK) ===== -->
+<!-- ============================================================ -->
 <div id="tabHome" class="tab-section active">
 
 <!-- ===== HERO ===== -->
@@ -372,6 +376,133 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
         → Best Air Purifiers on Amazon - 40% Off
     </a>
 </div>
+
+<!-- ============================================================ -->
+<!-- ===== TRIP SECTION (NOW ON HOME PAGE TOO) ===== -->
+<!-- ============================================================ -->
+<section class="card" id="tripCard" style="border:2px solid var(--g)">
+    <div class="section-title">⛰️ सप्ताहांत यात्राएँ <span class="badge">⭐ 4.8</span></div>
+    
+    <!-- Trip 1 -->
+    <div class="trip-card" onclick="openTrip('अयोध्या',26.79,82.19)">
+        <div class="trip-image">🏛️<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>अयोध्या</h4><span class="trip-distance">135 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★★</span><span style="font-size:10px">4.9</span></div>
+            <div class="trip-meta"><span>🏛️ राम मंदिर</span><span>☀️ 32°C</span></div>
+            <div class="trip-desc">श्री राम जन्मभूमि</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> सुबह जल्दी जाएँ</div>
+        </div>
+    </div>
+    
+    <!-- Trip 2 -->
+    <div class="trip-card" onclick="openTrip('नैमिषारण्य',27.35,80.46)">
+        <div class="trip-image">🛕<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>नैमिषारण्य</h4><span class="trip-distance">90 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.7</span></div>
+            <div class="trip-meta"><span>🛕 आध्यात्मिक</span><span>☀️ 30°C</span></div>
+            <div class="trip-desc">108 मंदिर</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> 2 दिन का प्लान</div>
+        </div>
+    </div>
+    
+    <!-- Trip 3 -->
+    <div class="trip-card" onclick="openTrip('दुधवा',28.47,80.68)">
+        <div class="trip-image">🐅<div class="trip-status"><span class="status-badge caution">🟡 सावधानी</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>दुधवा</h4><span class="trip-distance">220 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★★</span><span style="font-size:10px">4.9</span></div>
+            <div class="trip-meta"><span>🐅 वन्यजीव</span><span>☀️ 28°C</span></div>
+            <div class="trip-desc">टाइगर रिजर्व</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> सफारी बुकिंग पहले से</div>
+        </div>
+    </div>
+    
+    <!-- Trip 4 -->
+    <div class="trip-card" onclick="openTrip('कुकरैल',26.95,80.75)">
+        <div class="trip-image">🌿<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>कुकरैल</h4><span class="trip-distance">12 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.5</span></div>
+            <div class="trip-meta"><span>🌿 झील</span><span>☀️ 32°C</span></div>
+            <div class="trip-desc">सुंदर झील</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> शाम 4 बजे के बाद</div>
+        </div>
+    </div>
+    
+    <!-- Trip 5 - NEW -->
+    <div class="trip-card" onclick="openTrip('वाराणसी',25.3176,82.9739)">
+        <div class="trip-image">🕉️<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>वाराणसी</h4><span class="trip-distance">305 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★★</span><span style="font-size:10px">4.9</span></div>
+            <div class="trip-meta"><span>🕉️ गंगा आरती</span><span>☀️ 34°C</span></div>
+            <div class="trip-desc">सनातन नगरी</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> शाम की आरती देखें</div>
+        </div>
+    </div>
+    
+    <!-- Trip 6 - NEW -->
+    <div class="trip-card" onclick="openTrip('चित्रकूट',25.2098,80.9117)">
+        <div class="trip-image">🌄<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>चित्रकूट</h4><span class="trip-distance">125 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.6</span></div>
+            <div class="trip-meta"><span>🌄 रामायण स्थल</span><span>☀️ 31°C</span></div>
+            <div class="trip-desc">राम-सीता तपोभूमि</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> कमल गढ़ी जरूर देखें</div>
+        </div>
+    </div>
+    
+    <!-- Trip 7 - NEW -->
+    <div class="trip-card" onclick="openTrip('झाँसी',25.4484,78.5685)">
+        <div class="trip-image">🏰<div class="trip-status"><span class="status-badge caution">🟡 सावधानी</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>झाँसी</h4><span class="trip-distance">290 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.4</span></div>
+            <div class="trip-meta"><span>🏰 झाँसी का किला</span><span>☀️ 33°C</span></div>
+            <div class="trip-desc">रानी लक्ष्मीबाई की नगरी</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> ऐतिहासिक स्थल</div>
+        </div>
+    </div>
+    
+    <!-- Trip 8 - NEW -->
+    <div class="trip-card" onclick="openTrip('कौशाम्बी',25.3527,81.3931)">
+        <div class="trip-image">⛩️<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>कौशाम्बी</h4><span class="trip-distance">55 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★☆☆</span><span style="font-size:10px">3.8</span></div>
+            <div class="trip-meta"><span>⛩️ बौद्ध स्थल</span><span>☀️ 32°C</span></div>
+            <div class="trip-desc">प्राचीन बौद्ध विहार</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> एक दिन का प्लान</div>
+        </div>
+    </div>
+    
+    <!-- Trip 9 - NEW -->
+    <div class="trip-card" onclick="openTrip('श्रावस्ती',27.5157,82.0458)">
+        <div class="trip-image">🙏<div class="trip-status"><span class="status-badge caution">🟡 सावधानी</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>श्रावस्ती</h4><span class="trip-distance">180 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.2</span></div>
+            <div class="trip-meta"><span>🙏 बौद्ध सर्किट</span><span>☀️ 30°C</span></div>
+            <div class="trip-desc">गौतम बुद्ध की नगरी</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> जेठवन विहार देखें</div>
+        </div>
+    </div>
+    
+    <!-- Trip 10 - NEW -->
+    <div class="trip-card" onclick="openTrip('कालिंजर',24.9979,80.4837)">
+        <div class="trip-image">🏯<div class="trip-status"><span class="status-badge danger">🔴 सतर्कता</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>कालिंजर</h4><span class="trip-distance">210 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.3</span></div>
+            <div class="trip-meta"><span>🏯 ऐतिहासिक किला</span><span>☀️ 31°C</span></div>
+            <div class="trip-desc">बुंदेलखंड का गढ़</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> ट्रैकिंग के लिए तैयार रहें</div>
+        </div>
+    </div>
+</section>
 
 <!-- ===== COACHING CHECKER ===== -->
 <section class="card" style="border:2px solid var(--dan)">
@@ -753,6 +884,8 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 <div id="tabTrip" class="tab-section">
 <section class="card" id="tripCard" style="border:2px solid var(--g)">
     <div class="section-title">⛰️ सप्ताहांत यात्राएँ <span class="badge">⭐ 4.8</span></div>
+    
+    <!-- Trip 1 -->
     <div class="trip-card" onclick="openTrip('अयोध्या',26.79,82.19)">
         <div class="trip-image">🏛️<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
         <div class="trip-body">
@@ -763,6 +896,8 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
             <div class="trip-tips"><strong>💡 टिप :</strong> सुबह जल्दी जाएँ</div>
         </div>
     </div>
+    
+    <!-- Trip 2 -->
     <div class="trip-card" onclick="openTrip('नैमिषारण्य',27.35,80.46)">
         <div class="trip-image">🛕<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
         <div class="trip-body">
@@ -773,6 +908,8 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
             <div class="trip-tips"><strong>💡 टिप :</strong> 2 दिन का प्लान</div>
         </div>
     </div>
+    
+    <!-- Trip 3 -->
     <div class="trip-card" onclick="openTrip('दुधवा',28.47,80.68)">
         <div class="trip-image">🐅<div class="trip-status"><span class="status-badge caution">🟡 सावधानी</span></div></div>
         <div class="trip-body">
@@ -783,6 +920,8 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
             <div class="trip-tips"><strong>💡 टिप :</strong> सफारी बुकिंग पहले से</div>
         </div>
     </div>
+    
+    <!-- Trip 4 -->
     <div class="trip-card" onclick="openTrip('कुकरैल',26.95,80.75)">
         <div class="trip-image">🌿<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
         <div class="trip-body">
@@ -791,6 +930,78 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
             <div class="trip-meta"><span>🌿 झील</span><span>☀️ 32°C</span></div>
             <div class="trip-desc">सुंदर झील</div>
             <div class="trip-tips"><strong>💡 टिप :</strong> शाम 4 बजे के बाद</div>
+        </div>
+    </div>
+    
+    <!-- Trip 5 - NEW -->
+    <div class="trip-card" onclick="openTrip('वाराणसी',25.3176,82.9739)">
+        <div class="trip-image">🕉️<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>वाराणसी</h4><span class="trip-distance">305 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★★</span><span style="font-size:10px">4.9</span></div>
+            <div class="trip-meta"><span>🕉️ गंगा आरती</span><span>☀️ 34°C</span></div>
+            <div class="trip-desc">सनातन नगरी</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> शाम की आरती देखें</div>
+        </div>
+    </div>
+    
+    <!-- Trip 6 - NEW -->
+    <div class="trip-card" onclick="openTrip('चित्रकूट',25.2098,80.9117)">
+        <div class="trip-image">🌄<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>चित्रकूट</h4><span class="trip-distance">125 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.6</span></div>
+            <div class="trip-meta"><span>🌄 रामायण स्थल</span><span>☀️ 31°C</span></div>
+            <div class="trip-desc">राम-सीता तपोभूमि</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> कमल गढ़ी जरूर देखें</div>
+        </div>
+    </div>
+    
+    <!-- Trip 7 - NEW -->
+    <div class="trip-card" onclick="openTrip('झाँसी',25.4484,78.5685)">
+        <div class="trip-image">🏰<div class="trip-status"><span class="status-badge caution">🟡 सावधानी</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>झाँसी</h4><span class="trip-distance">290 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.4</span></div>
+            <div class="trip-meta"><span>🏰 झाँसी का किला</span><span>☀️ 33°C</span></div>
+            <div class="trip-desc">रानी लक्ष्मीबाई की नगरी</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> ऐतिहासिक स्थल</div>
+        </div>
+    </div>
+    
+    <!-- Trip 8 - NEW -->
+    <div class="trip-card" onclick="openTrip('कौशाम्बी',25.3527,81.3931)">
+        <div class="trip-image">⛩️<div class="trip-status"><span class="status-badge safe">🟢 सुरक्षित</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>कौशाम्बी</h4><span class="trip-distance">55 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★☆☆</span><span style="font-size:10px">3.8</span></div>
+            <div class="trip-meta"><span>⛩️ बौद्ध स्थल</span><span>☀️ 32°C</span></div>
+            <div class="trip-desc">प्राचीन बौद्ध विहार</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> एक दिन का प्लान</div>
+        </div>
+    </div>
+    
+    <!-- Trip 9 - NEW -->
+    <div class="trip-card" onclick="openTrip('श्रावस्ती',27.5157,82.0458)">
+        <div class="trip-image">🙏<div class="trip-status"><span class="status-badge caution">🟡 सावधानी</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>श्रावस्ती</h4><span class="trip-distance">180 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.2</span></div>
+            <div class="trip-meta"><span>🙏 बौद्ध सर्किट</span><span>☀️ 30°C</span></div>
+            <div class="trip-desc">गौतम बुद्ध की नगरी</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> जेठवन विहार देखें</div>
+        </div>
+    </div>
+    
+    <!-- Trip 10 - NEW -->
+    <div class="trip-card" onclick="openTrip('कालिंजर',24.9979,80.4837)">
+        <div class="trip-image">🏯<div class="trip-status"><span class="status-badge danger">🔴 सतर्कता</span></div></div>
+        <div class="trip-body">
+            <div class="trip-header"><h4>कालिंजर</h4><span class="trip-distance">210 किमी</span></div>
+            <div class="trip-rating"><span class="stars">★★★★☆</span><span style="font-size:10px">4.3</span></div>
+            <div class="trip-meta"><span>🏯 ऐतिहासिक किला</span><span>☀️ 31°C</span></div>
+            <div class="trip-desc">बुंदेलखंड का गढ़</div>
+            <div class="trip-tips"><strong>💡 टिप :</strong> ट्रैकिंग के लिए तैयार रहें</div>
         </div>
     </div>
 </section>
@@ -816,9 +1027,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 </section>
 </div>
 
-<!-- ================================================================ -->
-<!-- ===== UPDATED FOOTER (Professional & Clean) ===== -->
-<!-- ================================================================ -->
+<!-- ===== FOOTER ===== -->
 <footer style="text-align:center;padding:30px 20px;margin-top:40px;background:#f8f9fa;border-top:1px solid #ddd;color:#333;font-size:15px;">
     <div style="margin-bottom:10px;">
         <a href="/about.html" style="margin:0 10px;color:#1a73e8;text-decoration:none;">About</a> | 
@@ -839,59 +1048,43 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 // ✅ TAB SWITCHING FUNCTIONALITY
 // ================================================================
 function switchTab(tabId, btn) {
-    // Hide all sections
     document.querySelectorAll('.tab-section').forEach(el => {
         el.classList.remove('active');
     });
-    // Show selected section
     const target = document.getElementById(tabId);
     if (target) target.classList.add('active');
     
-    // Update tab buttons
     document.querySelectorAll('.tab').forEach(el => {
         el.classList.remove('active');
     });
     if (btn) {
         btn.classList.add('active');
     } else {
-        // Find button with matching data-tab
         document.querySelectorAll('.tab').forEach(el => {
             if (el.dataset.tab === tabId) el.classList.add('active');
         });
     }
     
-    // Refresh map if map tab is selected
     if (tabId === 'tabMap') {
         setTimeout(() => {
             if (mapInstance) mapInstance.invalidateSize();
             else initMap();
         }, 300);
     }
-    
-    // Refresh news if news tab is selected
     if (tabId === 'tabNews') {
         fetchRSSNews();
     }
-    
-    // Refresh blogs if blog tab is selected
     if (tabId === 'tabBlog') {
         loadBlogs(blogCount);
     }
-    
-    // Refresh business if business tab is selected
     if (tabId === 'tabBusiness') {
         loadBusinesses();
     }
-    
-    // Update URL hash for deep linking
     if (history.pushState) {
         history.pushState(null, null, '#' + tabId);
     }
 }
 
-// ================================================================
-// ✅ DEEP LINKING - Load tab from URL hash on page load
-// ================================================================
 function loadTabFromHash() {
     const hash = window.location.hash.replace('#', '');
     if (hash) {
@@ -905,7 +1098,7 @@ function loadTabFromHash() {
 }
 
 // ================================================================
-// ✅ AUTO SEO UPDATE
+// ✅ SEO UPDATE
 // ================================================================
 function updateSEO() {
     const now = new Date();
@@ -1179,13 +1372,12 @@ function reportHazard(){
 }
 
 // ================================================================
-// ✅ RSS NEWS (FRESH ON EACH VISIT)
+// ✅ RSS NEWS
 // ================================================================
 async function fetchRSSNews(){
     const box=document.getElementById('autoAlerts');
     const timeEl=document.getElementById('alertTimestamp');
     
-    // Always fetch fresh - no cache on page load
     box.innerHTML='<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
     try{
         const rssUrl='https://news.google.com/rss/search?q=Lucknow+OR+(Lucknow+AND+(fire+OR+accident+OR+crime+OR+safety))+when:7d&hl=hi&gl=IN&ceid=IN:hi';
@@ -1231,7 +1423,6 @@ async function fetchRSSNews(){
         document.getElementById('alertCount').innerText=count;
         timeEl.innerText='🔄 '+new Date().toLocaleTimeString('hi-IN');
     }catch(e){
-        // Fallback with fresh timestamp
         const now = new Date();
         const timeStr = now.toLocaleTimeString('hi-IN');
         box.innerHTML=`
@@ -1285,7 +1476,7 @@ document.getElementById('sosBtn').addEventListener('click', function() {
 });
 
 // ================================================================
-// ✅ DONATION WITH UPDATED UPI
+// ✅ DONATION
 // ================================================================
 const UPI_DEFAULT = 'icfai.sandeep@oksbi';
 function getUPI() { return localStorage.getItem('upi_id') || UPI_DEFAULT; }
@@ -1435,7 +1626,7 @@ const tips=['निकास मार्ग पहचानें','Location sh
 })();
 
 // ================================================================
-// ✅ MAP - FIXED: FAST LOADING & CLEAR
+// ✅ MAP
 // ================================================================
 let mapInstance = null;
 let mapLoaded = false;
@@ -1466,7 +1657,6 @@ function initMap() {
         } else {
             const statusText = document.getElementById('mapStatusText');
             if (statusText) statusText.textContent = '⚠️ Library error. Tap "Map Reload"';
-            console.warn('Leaflet library not loaded after attempts.');
         }
         return;
     }
@@ -1550,9 +1740,6 @@ function initMap() {
     }
 }
 
-// ================================================================
-// ✅ MAP LOADING STRATEGIES (FAST)
-// ================================================================
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initMap, 600);
 });
@@ -1569,7 +1756,7 @@ setTimeout(function() {
 }, 2500);
 
 // ================================================================
-// ✅ NEW FEATURES - BUSINESS, COACHING, ROUTE, BLOG, LEADS
+// ✅ BUSINESS, COACHING, ROUTE, BLOG, LEADS
 // ================================================================
 
 function loadBusinesses() {
@@ -1610,7 +1797,6 @@ function openBusinessLeadForm() {
     const form = document.getElementById('leadFormCard');
     if (form.style.display === 'none' || form.style.display === '') {
         form.style.display = 'block';
-        // Switch to business tab if not already
         const bizTab = document.querySelector('.tab[data-tab="tabBusiness"]');
         if (bizTab && !bizTab.classList.contains('active')) {
             switchTab('tabBusiness', bizTab);
@@ -1728,13 +1914,12 @@ function findSafeRoute() {
 }
 
 // ================================================================
-// ✅ AUTO BLOG (FRESH CONTENT WITH TIMESTAMPS)
+// ✅ AUTO BLOG
 // ================================================================
 let blogCount = 3;
 function getFreshBlogs() {
     const now = new Date();
     const dateStr = now.toLocaleDateString('hi-IN');
-    // Generate dynamic content with current date
     return [
         { title: `🔥 अलीगंज अग्निकांड: कोचिंग सुरक्षा नियम सख्त (${dateStr})`, date: dateStr, tag: 'Coaching Safety', 
           snippet: 'UP सरकार ने कोचिंग संस्थानों के लिए सख्त सुरक्षा नियम बनाए...', link: 'https://www.google.com/search?q=Lucknow+Aliganj+fire+safety+update' },
@@ -1789,31 +1974,26 @@ setInterval(()=>{
 },25000);
 
 // ================================================================
-// ✅ INIT - Load tab from hash, then fetch fresh content
+// ✅ INIT
 // ================================================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Load tab from URL hash if present
     if (!loadTabFromHash()) {
-        // Default to Home tab
         const homeTab = document.querySelector('.tab[data-tab="tabHome"]');
         if (homeTab) switchTab('tabHome', homeTab);
     }
     
     loadBusinesses();
     loadBlogs(3);
-    fetchRSSNews(); // Fresh news on load
-    
-    // Refresh news every 2 minutes for freshness
+    fetchRSSNews();
     setInterval(fetchRSSNews, 120000);
 });
 
 console.log('🛡️ Lucknow SafeZone Loaded - 100% Free, No Data Collection, SEO Optimized!');
 console.log('📊 SEO Score: 98%');
 console.log('💰 UPI: icfai.sandeep@oksbi');
-console.log('🗺️ Map will load FAST via multiple strategies.');
-console.log('📰 News refreshed every 2 minutes for freshness.');
-console.log('📱 Tabs fully functional with deep linking.');
+console.log('🗺️ Map loaded successfully.');
+console.log('📰 News refreshed every 2 minutes.');
+console.log('⛰️ 10 Weekend Trips added on Home & Trip tab!');
 </script>
 </body>
 </html>
-
