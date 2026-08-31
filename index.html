@@ -3712,6 +3712,38 @@
         console.log('🛡️ Safe Zones with CCTV & Safety Features added!');
         console.log('🔥 Auto Carousel - No arrows, smooth auto-slide!');
         console.log('✅ All features working properly!');
+        <script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", function () {
+
+        navigator.serviceWorker
+            .register("/sw.js")
+
+            .then(function (registration) {
+
+                console.log(
+                    "Service Worker registered:",
+                    registration.scope
+                );
+
+            })
+
+            .catch(function (error) {
+
+                console.error(
+                    "Service Worker registration failed:",
+                    error
+                );
+
+            });
+
+    });
+
+}
+
+</script>
     </script>
 </body>
 </html>
